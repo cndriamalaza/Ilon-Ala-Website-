@@ -1,0 +1,44 @@
+<header class="site-header">
+  <div class="container header-container">
+    
+    <!-- Logo + Nom -->
+    <a href="{{ "/" | relURL }}" class="logo-wrapper" aria-label="Retour à l'accueil">
+      {{ with resources.Get .Site.Params.logo }}
+        <img src="{{ .RelPermalink }}" 
+             alt="{{ $.Site.Params.logoAlt }}" 
+             class="logo-image"
+             height="80"
+             width="auto">
+      {{ else }}
+        <!-- Fallback textuel -->
+        <div class="logo-fallback">
+          <span class="logo-main">ILON'ALA</span>
+        </div>
+      {{ end }}
+      
+      <div class="logo-text">
+        <h1 class="site-title">{{ .Site.Title }}</h1>
+        <p class="site-tagline">{{ .Site.Params.tagline }}</p>
+      </div>
+    </a>
+    
+    <!-- Navigation principale -->
+    <nav class="main-nav" aria-label="Navigation principale">
+      <button class="menu-toggle" aria-label="Menu mobile" aria-expanded="false">
+        <span class="hamburger"></span>
+      </button>
+      
+      <ul class="nav-list">
+        {{ range .Site.Menus.main }}
+          <li>
+            <a href="{{ .URL | relURL }}" 
+               class="nav-link {{ if $.IsMenuCurrent "main" . }}active{{ end }}">
+              {{ .Name }}
+            </a>
+          </li>
+        {{ end }}
+      </ul>
+    </nav>
+    
+  </div>
+</header>

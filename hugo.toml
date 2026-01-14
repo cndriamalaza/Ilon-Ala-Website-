@@ -1,0 +1,43 @@
+baseURL = 'http://localhost:1313/'
+languageCode = 'fr-fr'
+title = "Ilon'Ala"
+#theme = 'blowfish'
+
+[params]
+  # Charte graphique extraite du logo
+  primaryColor = "#1D4C2F"        # Vert foncé
+  secondaryColor = "#FDF1B4"      # Jaune crème (goutte)
+  accentColor = "#3C8031"         # Vert feuille
+  backgroundColor = "#FFFFFF"     # Blanc
+  textColor = "#1D4C2F"           # Vert foncé pour texte
+  
+  # Logo
+  logo = "images/logo-ilonala.png"
+  logoAlt = "ILON'ALA - La goutte essentielle"
+  tagline = "La goutte essentielle"
+  
+  # Typographie
+  fontHeading = "'Pacifico', cursive, 'Brush Script MT', cursive"  # Style manuscrit
+  fontBody = "'Lato', sans-serif"                                  # Texte lisible
+  
+  # Contact
+  email = "contact@ilonala.com"
+  phone = "+33 1 23 45 67 89"
+
+[menu]
+  [[menu.main]]
+    name = "Accueil"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    name = "Nos produits"
+    url = "/produits/"
+    weight = 2
+  [[menu.main]]
+    name = "Notre histoire"
+    url = "/about/"
+    weight = 3
+  [[menu.main]]
+    name = "Contact"
+    url = "/contact/"
+    weight = 4

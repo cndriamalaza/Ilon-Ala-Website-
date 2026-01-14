@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+<head>
+  {{ partial "head.html" . }}
+</head>
+<body>
+  {{ partial "header.html" . }}
+  
+  <main class="container">
+    {{ block "main" . }}{{ end }}
+  </main>
+  
+  {{ partial "footer.html" . }}
+  
+  <!-- JavaScript pour menu mobile -->
+  <script>
+    document.querySelector('.menu-toggle').addEventListener('click', function() {
+      this.setAttribute('aria-expanded', this.getAttribute('aria-expanded') === 'false' ? 'true' : 'false');
+      document.querySelector('.nav-list').classList.toggle('active');
+    });
+  </script>
+</body>
+</html>

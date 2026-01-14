@@ -1,0 +1,22 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ if .Title }}{{ .Title }} | {{ end }}{{ .Site.Title }}</title>
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Lato:wght@300;400;700&family=Raleway:wght@400;500&display=swap" rel="stylesheet">
+
+<!-- CSS personnalisé -->
+{{ $style := resources.Get "css/custom.css" | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $style.Permalink }}">
+
+<!-- Favicon -->
+<link rel="icon" type="image/x-icon" href="{{ "favicon.ico" | relURL }}">
+
+<!-- Meta description -->
+{{ with .Description }}
+<meta name="description" content="{{ . }}">
+{{ else }}
+<meta name="description" content="{{ .Site.Params.tagline }}">
+{{ end }}
